@@ -1,7 +1,5 @@
 const burger = document.querySelector('.burger');
 const nav = document.querySelector('.nav__links');
-const content = document.querySelector('.content')
-const bottom = document.querySelector('.bottom')
 const overlay = document.querySelector('.overlay')
 
 
@@ -10,6 +8,13 @@ burger.addEventListener('click', function(){
    burger.classList.toggle('active');
    document.body.classList.toggle('menu-open');
 })
+
+document.querySelector('.overlay');
+   overlay.addEventListener('click', function(){
+      nav.classList.remove('open');
+      burger.classList.remove('active');
+      document.body.classList.remove('menu-open');
+   })
 
 document.querySelectorAll('.nav__links a').forEach(function(link) {
    link.addEventListener('click', function(){
