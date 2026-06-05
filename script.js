@@ -2,20 +2,20 @@ const burger = document.querySelector('.burger');
 const nav = document.querySelector('.nav__links');
 const content = document.querySelector('.content')
 const bottom = document.querySelector('.bottom')
+const overlay = document.querySelector('.overlay')
+
 
 burger.addEventListener('click', function(){
    nav.classList.toggle('open');
    burger.classList.toggle('active');
-   content.classList.toggle('background_blur')
-   bottom.classList.toggle('background_blur')
+   document.body.classList.toggle('menu-open');
 })
 
 document.querySelectorAll('.nav__links a').forEach(function(link) {
    link.addEventListener('click', function(){
       nav.classList.remove('open');
       burger.classList.remove('active');
-      content.classList.remove('background_blur');
-      bottom.classList.remove('background_blur');
+      document.body.classList.remove('menu-open');
    })
 })
 

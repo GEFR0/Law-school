@@ -35,21 +35,32 @@ a {
     color: var(--color-text);
     text-decoration: none;
 }
-.bottom {
+body.menu-open .overlay {
     opacity: 1;
+    pointer-events: auto;
+    z-index: 98;
 }
-.bottom.background_blur {
+body.menu-open main, body.menu-open footer {
     background-color: rgba(255, 255, 255, 0.1);
     opacity: 1;
     filter: blur(10px);
+    z-index: 97;
 }
-.content {
-    opacity: 1;
+.overlay {
+    position: fixed;
+    top:0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    pointer-events: none;
 }
-.content.background_blur {
-    background-color: rgba(255, 255, 255, 0.1);
+.overlay.active {
     opacity: 1;
-    filter: blur(10px);
+    pointer-events: auto;
+    z-index: 98;
+
 }
 /*HEADER*/
 .navigation__top {
